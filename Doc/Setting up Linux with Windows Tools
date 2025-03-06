@@ -1,0 +1,71 @@
+Setting up Linux using Windows tools:
+
+Install VS Code - https://code.visualstudio.com/
+
+Enable Virtualization in BIOS if you have not
+
+Install WSL - https://learn.microsoft.com/en-us/windows/wsl/install
+
+Useful VS Code Plugins:
+Git Extension Pack
+GitHub Pull Requests
+Python
+Python Debugger
+Prettier
+
+#Additional plugins can easily be found online as you become more experienced in VSCode
+
+Install the WSL Plugin for VSCode (Will show up automatically upon starting VSCode)
+
+Once everything is set up, launch VS Code go to the Remote Explorer tab and start your Ubuntu VM
+
+(NOTE)
+This assumes that the directory you pull the Repo from is named /IronForgedBot, its location doesn't matter but it is recommended to place it in the root directory.
+
+Common commands:
+
+Move to a specific folder:
+cd <directory>
+
+Example:
+cd IronForgedBot <- This takes you from the root directory to the IronForgedBot directory as long as IronForgedBot is placed inside the root directory.
+
+Create copy of a file as a file named something else.
+cp <file name> <new file name>
+
+Example:
+cp .env.example .env <- Copies the .env.example file and names the new one .env
+
+If facing issues with permissions, just place sudo in front of the command and it will send that command with escalated privileges. Additional commands can easily be looked up online but these two are the most common ones you'll use.
+
+(Note)
+Please reference Git Fundamentals document for pulling the repository from GitHub and adding it in VS Code
+
+Once in the VM pull the IronForgedBot repo into a folder you want to use, cd into the IronForgedBot folder, and run the following commands:
+
+``` sh
+sudo apt update
+```
+
+``` sh
+sudo apt install python3.13 python3.13-venv python3.13-dev
+```
+
+Confirm you have Python 3.13 now.
+``` sh
+python3.13 --version
+```
+
+``` sh
+python3.13 -m venv .venv
+```
+
+This creates the virtual environment inside your /IronForgedBot folder. 
+
+For additional assurance, you can set the appropriate permissions to the IronForgedBot folder:
+
+``` sh
+sudo chown -R $(whoami) IronForgedBot
+```
+
+From here you should be able to perform the commands shown in README.txt to complete your IronForgedBot setup!
