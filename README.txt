@@ -43,6 +43,12 @@ python -m venv .venv
 
 This will create a directory `.venv`. To activate the environment, run:
 
+For Linux
+``` sh
+source .venv/bin/activate
+```
+
+For Windows
 ``` sh
 source .venv/Scripts/activate
 ```
